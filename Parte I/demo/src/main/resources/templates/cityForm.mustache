@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>City Form</title>
+    </head>
+    <body>
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="/city/form">Add a city</a></li>
+            <li><a href="/city/show">Cities</a></li>
+        </ul>
+
+        <h3>City Form</h3>
+        <form id="cityAddForm" name="cityForm" action="/city/add" method="post">
+            <label for="country">Country:</label>
+            <input type="text" id="addCountry" name="country"><br><br>
+            <label for="name">City:</label>
+            <input type="text" id="addName" name="name"><br><br>
+            <input type="submit" value="Send">
+        </form>
+        <script src="/js/CityValidation.js"></script>
+    </body>
+</html>

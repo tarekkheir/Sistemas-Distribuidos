@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <ul>
+        <li><a href="/city/form">Add a city</a></li>
+        <li><a href="/city/show">Cities</a></li>
+    </ul>
+
+    <h3>City</h3>
+    <ul>
+        {{#city}}
+        <li>{{country}} - {{name}} =>
+            <a href="/city/edit/{{id}}">Edit</a>
+            <button id="deleteCity" onclick="deleteCity({{id}})">Delete</button>
+        </li>
+        {{/city}}
+    </ul>
+    <script src="/js/CityActions.js"></script>
+</body>
+</html>

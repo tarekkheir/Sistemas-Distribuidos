@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit City</title>
+    <script src="/js/CityActions.js"></script>
+</head>
+<body>
+    <h1>Menu</h1>
+    <ul>
+        <li><a href="/city/form">Add a city</a></li>
+        <li><a href="/city/show">Cities</a></li>
+    </ul>
+
+    <h3>Edit City</h3>
+    {{#city}}
+    <form id="cityEditForm" onsubmit="update({{id}}); return false;">
+        <label for="name">Country:</label><br>
+        <input type="text" id="editCountry" name="country" value="{{country}}"><br>
+        <label for="population">City:</label><br>
+        <input type="text" id="editName" name="name" value="{{name}}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+    {{/city}}
+</body>
+</html>

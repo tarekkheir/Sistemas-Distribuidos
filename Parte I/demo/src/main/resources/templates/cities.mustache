@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <ul>
+        <li><a href="/city/form">Add a city</a></li>
+        <li><a href="/city/show">Cities</a></li>
+    </ul>
+
+    <h3>Cities</h3>
+    <ul>
+        {{#cities}}
+        <li>{{country}} - <a href="/city/show/{{id}}">{{name}}</a></li>
+        {{/cities}}
+        {{^cities}}
+        <li>No cities available</li>
+        {{/cities}}
+    </ul>
+</body>
+</html>
