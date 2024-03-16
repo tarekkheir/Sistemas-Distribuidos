@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+</head>
+    <body>
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="/city/form">Add a city</a></li>
+            <li><a href="/city/show">Cities</a></li>
+            <li><a href="/country/form">Add a country</a></li>
+            <li><a href="/country/show">Countries</a></li>
+            <li><a href="/club/form">Add a Club</a></li>
+            <li><a href="/club/show">Clubs</a></li>
+        </ul>
+        <h3>Country</h3>
+        <ul>
+            {{#country}}
+                <li>{{name}} =>
+                    <a href="/country/edit/{{id}}">Edit</a>
+                    <button id="deleteCountry" onclick="deleteCountry({{id}})">Delete</button>
+                </li>
+            {{/country}}
+            {{^country}}
+                <li>No country found</li>
+            {{/country}}
+        </ul>
+        <script src="/js/CountryActions.js"></script>
+    </body>
+</html>

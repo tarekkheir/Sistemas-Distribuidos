@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit City</title>
+        <script src="/js/CountryActions.js"></script>
+    </head>
+    <body>
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="/city/form">Add a city</a></li>
+            <li><a href="/city/show">Cities</a></li>
+            <li><a href="/country/form">Add a country</a></li>
+            <li><a href="/country/show">Countries</a></li>
+            <li><a href="/club/form">Add a Club</a></li>
+            <li><a href="/club/show">Clubs</a></li>
+        </ul>
+
+        <h3>Edit country</h3>
+        {{#country}}
+            <form id="countryEditForm" onsubmit="update({{id}}); return false;">
+                <label for="country">Country:</label><br>
+                <input type="text" id="editCountryName" name="name" value="{{name}}"><br><br>
+                <button type="submit">Update</button>
+            </form>
+        {{/country}}
+        {{^country}}
+            <li>No country found</li>
+        {{/country}}
+    </body>
+</html>

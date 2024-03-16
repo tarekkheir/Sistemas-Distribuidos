@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>City Form</title>
+    </head>
+    <body>
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="/city/form">Add a city</a></li>
+            <li><a href="/city/show">Cities</a></li>
+            <li><a href="/country/form">Add a country</a></li>
+            <li><a href="/country/show">Countries</a></li>
+            <li><a href="/club/form">Add a Club</a></li>
+            <li><a href="/club/show">Clubs</a></li>
+        </ul>
+
+        <h3>Country Form</h3>
+        <form id="countryAddForm" name="countryForm" action="/country/add" method="post">
+            <label for="name">Country:</label>
+            <input type="text" id="addCountryName" name="name"><br><br>
+            <input type="submit" value="Send">
+        </form>
+        <script src="/js/CountryValidation.js"></script>
+    </body>
+</html>

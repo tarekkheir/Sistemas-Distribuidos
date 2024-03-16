@@ -11,6 +11,10 @@
     <ul>
         <li><a href="/city/form">Add a city</a></li>
         <li><a href="/city/show">Cities</a></li>
+        <li><a href="/country/form">Add a country</a></li>
+        <li><a href="/country/show">Countries</a></li>
+        <li><a href="/club/form">Add a Club</a></li>
+        <li><a href="/club/show">Clubs</a></li>
     </ul>
 
     <h3>Edit City</h3>
@@ -22,6 +26,9 @@
         <input type="text" id="editName" name="name" value="{{name}}"><br><br>
         <button type="submit">Update</button>
     </form>
+    {{/city}}
+    {{^city}}
+        <li>No city found</li>
     {{/city}}
 </body>
 </html>

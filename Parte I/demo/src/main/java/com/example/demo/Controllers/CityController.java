@@ -19,28 +19,26 @@ public class CityController {
 
     @GetMapping("/form")
     public String form() {
-        return "cityForm";
+        return "city/cityAdd";
     }
 
     @GetMapping("/show")
     public String show(Model model) {
         List<City> cities = cityService.getAllCities();
         model.addAttribute("cities", cities);
-        return "cities";
+        return "city/cities";
     }
     @GetMapping("/show/{id}")
     public String showById(@PathVariable Long id, Model model) {
         City city = cityService.getById(id);
-        if (city == null) return "error";
         model.addAttribute("city", city);
-        return "city";
+        return "city/city";
     }
     @GetMapping("/edit/{id}")
     public String editById(@PathVariable Long id, Model model) {
         City city = cityService.getById(id);
-        if (city == null) return "error";
         model.addAttribute("city", city);
-        return "cityEdit";
+        return "city/cityEdit";
     }
     @PostMapping("/add")
     public RedirectView add(City city, Model model) {
@@ -54,7 +52,7 @@ public class CityController {
         City city = cityService.getById(id);
         if (!city.getName().equals(newCity.getName())) cityService.update(id, newCity);
         model.addAttribute("city", newCity);
-        return "city";
+        return "city/city";
     }
 
     @DeleteMapping("/delete/{id}")
@@ -62,6 +60,6 @@ public class CityController {
         cityService.delete(id);
         List<City> cities = cityService.getAllCities();
         model.addAttribute("cities", cities);
-        return "cities";
+        return "city/cities";
     }
 }
