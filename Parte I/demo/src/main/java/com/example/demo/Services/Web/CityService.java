@@ -1,4 +1,4 @@
-package com.example.demo.Services;
+package com.example.demo.Services.Web;
 
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;

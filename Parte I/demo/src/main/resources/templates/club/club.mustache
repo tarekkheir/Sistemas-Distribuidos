@@ -18,7 +18,7 @@
         <h3>Clubs</h3>
         <ul>
             {{#club}}
-                <li>{{name}} =>
+                <li>{{country}} - {{city}} - {{name}} =>
                     <a href="/club/edit/{{id}}">Edit</a>
                     <button id="deleteClub" onclick="deleteClub({{id}})">Delete</button>
                 </li>

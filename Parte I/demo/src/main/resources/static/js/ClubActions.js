@@ -1,12 +1,16 @@
 function update(id) {
     var name = document.getElementById("editClubName").value;
+    var city = document.getElementById("editClubCity").value;
+    var country = document.getElementById("editClubCountry").value;
 
-    if (name === "") {
+    if (name === "" || city == "" || country == "") {
         alert("Please fill all the fileds !");
         return false;
     }
 
     var clubData = {
+        country: country,
+        city: city,
         name: name,
         id: id
     };

@@ -1,5 +1,5 @@
-package com.example.demo.Controllers;
-import com.example.demo.Services.CityService;
+package com.example.demo.Controllers.Web;
+import com.example.demo.Services.Web.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

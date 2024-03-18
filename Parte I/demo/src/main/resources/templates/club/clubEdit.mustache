@@ -20,6 +20,10 @@
         <h3>Edit club</h3>
         {{#club}}
             <form id="clubEditForm" onsubmit="update({{id}}); return false;">
+                <label for="country">Country:</label><br>
+                <input type="text" id="editClubCountry" name="country" value="{{country}}"><br><br>
+                <label for="city">City:</label><br>
+                <input type="text" id="editClubCity" name="city" value="{{city}}"><br><br>
                 <label for="club">Club:</label><br>
                 <input type="text" id="editClubName" name="name" value="{{name}}"><br><br>
                 <button type="submit">Update</button>

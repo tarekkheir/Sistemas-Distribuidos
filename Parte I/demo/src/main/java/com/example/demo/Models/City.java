@@ -1,8 +1,13 @@
 package com.example.demo.Models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class City {
+    @JsonProperty
     private Long id;
+    @JsonProperty
     private String country;
+    @JsonProperty
     private String name;
 
     public Long getId() {
