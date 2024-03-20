@@ -21,10 +21,10 @@ function update(id) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                console.log("Le club a été mise à jour avec succès !");
+                console.log("The club has been successfully updated!");
                 window.location.href = '/club/show';
             } else {
-                console.error("Erreur lors de la mise à jour du club :", xhr.status);
+                console.error("Error while updating the club :", xhr.status);
             }
         }
     };
@@ -46,10 +46,10 @@ function deleteClub(id) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                console.log("Le club a été supprimé avec succès !");
+                console.log("The club has been successfully deleted !");
                 window.location.href = '/club/show';
             } else {
-                console.error("Erreur lors de la suppression à jour du club :", xhr.status);
+                console.error("Error while deleting the club :", xhr.status);
             }
         }
     };

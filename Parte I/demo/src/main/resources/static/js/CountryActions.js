@@ -17,10 +17,10 @@ function update(id) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                console.log("La ville a été mise à jour avec succès !");
+                console.log("The city has been successfully updated !");
                 window.location.href = '/country/show';
             } else {
-                console.error("Erreur lors de la mise à jour de la ville :", xhr.status);
+                console.error("Error while updating city :", xhr.status);
             }
         }
     };
@@ -42,10 +42,10 @@ function deleteCountry(id) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                console.log("Le pays a été supprimé avec succès !");
+                console.log("The country has been successfully deleted !");
                 window.location.href = '/country/show';
             } else {
-                console.error("Erreur lors de la suppression à jour du pays :", xhr.status);
+                console.error("Error while deleting the country :", xhr.status);
             }
         }
     };
