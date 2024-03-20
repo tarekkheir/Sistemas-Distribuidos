@@ -18,7 +18,7 @@ function update(id) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 console.log("La ville a été mise à jour avec succès !");
-                window.location.href = '/country/show/'+id;
+                window.location.href = '/country/show';
             } else {
                 console.error("Erreur lors de la mise à jour de la ville :", xhr.status);
             }

@@ -1,4 +1,5 @@
 package com.example.demo.Controllers.Web;
+import com.example.demo.Models.City;
 import com.example.demo.Services.Web.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,12 +32,14 @@ public class CountryController {
     @GetMapping("/show/{id}")
     public String showById(@PathVariable Long id, Model model) {
         Country country = countryService.getById(id);
+        if (country == null) return "error";
         model.addAttribute("country", country);
         return "country/country";
     }
     @GetMapping("/edit/{id}")
     public String editById(@PathVariable Long id, Model model) {
         Country country = countryService.getById(id);
+        if (country == null) return "error";
         model.addAttribute("country", country);
         return "country/countryEdit";
     }
@@ -51,8 +54,9 @@ public class CountryController {
                          Model model) {
         Country country = countryService.getById(id);
         if (!country.getName().equals(newCountry.getName())) countryService.update(id, newCountry);
-        model.addAttribute("country", newCountry);
-        return "country/country";
+        List<Country> countries = countryService.getAllCountries();
+        model.addAttribute("countries", countries);
+        return "country/countries";
     }
 
     @DeleteMapping("/delete/{id}")

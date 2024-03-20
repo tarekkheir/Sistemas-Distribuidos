@@ -1,4 +1,5 @@
 package com.example.demo.Controllers.Web;
+import com.example.demo.Models.Club;
 import com.example.demo.Services.Web.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,12 +32,14 @@ public class CityController {
     @GetMapping("/show/{id}")
     public String showById(@PathVariable Long id, Model model) {
         City city = cityService.getById(id);
+        if (city == null) return "error";
         model.addAttribute("city", city);
         return "city/city";
     }
     @GetMapping("/edit/{id}")
     public String editById(@PathVariable Long id, Model model) {
         City city = cityService.getById(id);
+        if (city == null) return "error";
         model.addAttribute("city", city);
         return "city/cityEdit";
     }
@@ -51,8 +54,9 @@ public class CityController {
                                Model model) {
         City city = cityService.getById(id);
         if (!city.getName().equals(newCity.getName())) cityService.update(id, newCity);
-        model.addAttribute("city", newCity);
-        return "city/city";
+        List<City> cities = cityService.getAllCities();
+        model.addAttribute("cities", cities);
+        return "city/cities";
     }
 
     @DeleteMapping("/delete/{id}")

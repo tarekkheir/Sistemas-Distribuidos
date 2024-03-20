@@ -22,7 +22,7 @@ function update(id) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 console.log("Le club a été mise à jour avec succès !");
-                window.location.href = '/club/show/'+id;
+                window.location.href = '/club/show';
             } else {
                 console.error("Erreur lors de la mise à jour du club :", xhr.status);
             }

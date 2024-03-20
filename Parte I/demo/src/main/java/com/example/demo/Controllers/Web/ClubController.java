@@ -31,12 +31,14 @@ public class ClubController {
     @GetMapping("/show/{id}")
     public String showById(@PathVariable Long id, Model model) {
         Club club = clubService.getById(id);
+        if (club == null) return "error";
         model.addAttribute("club", club);
-        return "club/club";
+        return "club/clubEdit";
     }
     @GetMapping("/edit/{id}")
     public String editById(@PathVariable Long id, Model model) {
         Club club = clubService.getById(id);
+        if (club == null) return "error";
         model.addAttribute("club", club);
         return "club/clubEdit";
     }
@@ -51,8 +53,9 @@ public class ClubController {
                          Model model) {
         Club club = clubService.getById(id);
         if (!club.getName().equals(newClub.getName())) clubService.update(id, newClub);
-        model.addAttribute("club", newClub);
-        return "club/club";
+        List<Club> clubs = clubService.getAllClubs();
+        model.addAttribute("clubs", clubs);
+        return "club/clubs";
     }
 
     @DeleteMapping("/delete/{id}")

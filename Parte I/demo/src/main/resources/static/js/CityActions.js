@@ -1,6 +1,6 @@
 function update(id) {
-    var country = document.getElementById("editCountry").value;
-    var name = document.getElementById("editName").value;
+    var country = document.getElementById("editCityCountry").value;
+    var name = document.getElementById("editCityName").value;
 
     if (country === "" || name === "") {
         alert("Please fill all the fileds !");
@@ -20,7 +20,7 @@ function update(id) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 console.log("La ville a été mise à jour avec succès !");
-                window.location.href = '/city/show/'+id;
+                window.location.href = '/city/show';
             } else {
                 console.error("Erreur lors de la mise à jour de la ville :", xhr.status);
             }
